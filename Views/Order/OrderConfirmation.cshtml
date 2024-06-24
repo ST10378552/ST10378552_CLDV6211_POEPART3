@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #218838;
+            }
+    </style>
+</head>
+<body>
+
+    <h2>Order Confirmation</h2>
+
+    <p>Your order has been placed successfully!</p>
+    <p>
+        Please visit the <a href="/Order/OrderHistory">Order History</a> page to see a record of your previous and current orders.
+    </p>
+
+    <!-- Add a button to proceed -->
+    <button onclick="window.location.href='/Order/OrderHistory'">Proceed to Order History</button>
+
+</body>
+</html>

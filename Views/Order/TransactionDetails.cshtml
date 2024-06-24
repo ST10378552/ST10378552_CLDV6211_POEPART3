@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #cfe4ff;
+        }
+
+        .container {
+            max-width: 800px; /* Increased max-width */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
+            justify-content: space-between;
+        }
+
+            .payment-form input[type="text"],
+            .payment-form input[type="number"],
+            .payment-form input[type="date"],
+            .payment-form select {
+                width: calc(50% - 5px); /* Set width to 50% - spacing */
+                padding: 12px; /* Increased padding */
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            .payment-form label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .payment-form button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+                .payment-form button:hover {
+                    background-color: #45a049;
+                }
+
+        img {
+            max-width: 100%; /* Ensures image doesn't overflow container */
+            height: auto; /* Maintains aspect ratio */
+            margin-bottom: 20px;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="~/Images/71H9iX+14pL.jpg" alt="Payment Image">
+        </div>
+        <form class="payment-form" id="paymentForm" action="#" method="POST">
+            <div style="width: 100%;">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" required>
+            </div>
+
+            <div style="width: 100%;">
+                <label for="card_holder">Card Holder:</label>
+                <input type="text" id="card_holder" name="card_holder" required>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <div style="flex: 1; margin-right: 10px;">
+                    <label for="expiry_date">Expiry Date:</label>
+                    <input type="date" id="expiry_date" name="expiry_date" required>
+                </div>
+                <div style="flex: 1; margin-left: 10px;">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+            </div>
+
+            <button type="submit">Submit Payment</button>
+        </form>
+        <div class="message" id="thankYouMessage" style="display: none;">Thank you for your purchase</div>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById('paymentForm').style.display = 'none'; // Hide form
+            document.getElementById('thankYouMessage').style.display = 'block'; // Show thank you message
+        });
+    </script>
+</body>
+</html>
